@@ -1,6 +1,7 @@
 var fs = require('fs'),
     archiver = require('archiver'),
-    manifest = require("./manifest.json");
+    manifestPath = "./manifest.json",
+    manifest = require(manifestPath);
 
 var isLocalBuild = process.env.TRAVIS_BRANCH === undefined;
 var BUILD_VERSION = process.argv[2];
