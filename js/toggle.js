@@ -24,9 +24,10 @@ var execute = executeWithDependencies(dependencies);
 
 var toggle = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
-    var whitelist = localStorage["jigsaw-filter"];
-    if(whitelist && whitelist.length > 0) {
-        chrome.storage.sync.set({"whitelist": JSON.parse(whitelist)}, function() {
+    var data = localStorage["jigsaw-filter"];
+    if(data && data.length > 0) {
+        console.log(data);
+        chrome.storage.sync.set(JSON.parse(data), function() {
             toggle = !toggle;
             toggle ? execute("./resources/on.png", "./js/filter.js") : execute("./resources/off.png", "./js/unfilter.js");
         });

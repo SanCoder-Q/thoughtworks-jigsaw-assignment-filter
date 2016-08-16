@@ -32,6 +32,13 @@ main .content {
 main .whitelist {
     width: 100%;
     display: block;
+    margin: 20px 0;
+}
+
+main .whitelist span {
+    color: white;
+    display: block;
+    margin: 10px 0;
 }
 
 main .whitelist textarea {
@@ -52,7 +59,7 @@ button.save {
     display: inline-block;
     font-family: "GothamBold", Helvetica, Arial, sans-serif;
     line-height: 26px;
-    margin-top: 10px;
+    margin-top: 0px;
     text-shadow: none;
     background: none;
     float: right;
