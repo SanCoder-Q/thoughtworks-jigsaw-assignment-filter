@@ -39,6 +39,7 @@ main .whitelist span {
     color: white;
     display: block;
     margin: 10px 0;
+    font-size: 1.3em;
 }
 
 main .whitelist textarea {
