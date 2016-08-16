@@ -1,0 +1,82 @@
+body {
+    background-color: #778895;
+    background-repeat: repeat;
+    background-size: 1066px 940px;
+    margin: 0;
+    overflow: auto;
+}
+
+main {
+    background-color: #3C454C;
+    border: 1px solid #272D33;
+    border-radius: 6px;
+    margin: 40px auto 20px auto;
+    position: relative;
+    width: 60%;
+    padding: 0 10px 20px 10px;
+}
+
+main h2 {
+    color: white;
+    margin-top: 30px;
+    text-shadow: 1px 1px black;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+main .content {
+    width: 90%;
+    margin: 25px auto 5px auto;
+}
+
+main .whitelist {
+    width: 100%;
+    display: block;
+}
+
+main .whitelist textarea {
+    width: 96%;
+    margin: 0;
+    border: 0;
+    padding: 10px 2%;
+    font-size: 1.1em;
+}
+
+button.save {
+    display: block;
+    width: 120px;
+    border: 1px solid #209BC9;
+    border-radius: 3px;
+    color: #209BC9;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "GothamBold", Helvetica, Arial, sans-serif;
+    line-height: 26px;
+    margin-top: 10px;
+    text-shadow: none;
+    background: none;
+    float: right;
+}
+
+button.save:hover {
+    border-color: grey;
+}
+
+button.save:active {
+    background-color: #aaaaaa;
+}
+
+main .content:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+main .message {
+    margin: 5px auto;
+    color: white;
+    text-align: center;
+    visibility: hidden;
+}
+
+
