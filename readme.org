@@ -1,0 +1,18 @@
+#+OPTIONS: H:2
+#+STARTUP: indent
+#+STARTUP: show-all
+#+PROPERTY: header-args :results silent
+
+#+TITLE: ThoughtWorks Jigsaw assignment filter
+#+Author: Jianming Qu
+
+** Intro
+A filter for jigsaw assignment table.
+
+** How to use it
+1. Open the chrome extension page: [[chrome://extensions/][chrome://extensions/]]
+2. Click ~Options~ to open the configuration page.
+3. Respectively put the IDs of core team and dedicated team into the two text areas.
+   Any general separator symbol could work.
+4. Save the configuration.
+5. Go to Jigsaw assignment page and click the extension icon.
