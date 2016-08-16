@@ -1,3 +1,7 @@
+chrome.runtime.onInstalled.addListener(function (object) {
+    chrome.tabs.create({url: "config.html"});
+});
+
 var executeWithDependencies = function(dependencies){
     return function (icon, jsfile) {
         if(dependencies) {
