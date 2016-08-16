@@ -1,6 +1,6 @@
-function contains(arr, str) {
-    var lowerCaseStr = str.toLowerCase();
-    return arr.find(_ => _.toLowerCase() === lowerCaseStr);
+function contains(arr, row) {
+    var href = $(row).find(".name a").attr('href');
+    return arr.find(_ => href && href.endsWith("/"+_));
 }
 
 var coreLable =
@@ -12,12 +12,12 @@ var coreLable =
         var table = $("table#assignment");
         table.find("tbody tr")
             .map((i, l) => {
-                if (contains(data.core, $(l).find(".name a").text())) {
+                if (contains(data.core, l)) {
                     $(l).children(":first").append(coreLable);
                 }
                 return l;
             })
-            .filter((i, l) => !contains(data.core.concat(data.dedicated), $(l).find(".name a").text()))
+            .filter((i, l) => !contains(data.core.concat(data.dedicated), l))
             .each((i, l) => $(l).hide());
     });
 })(jQuery);
