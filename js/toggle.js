@@ -17,7 +17,7 @@ var executeWithDependencies = function(dependencies){
         } else {
             chrome.tabs.executeScript(null, { file: jsfile});
         }
-    }
+    };
 };
 
 var dependencies = [
@@ -33,7 +33,11 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         console.log(data);
         chrome.storage.sync.set(JSON.parse(data), function() {
             toggle = !toggle;
-            toggle ? execute("./resources/on.png", "./js/filter.js") : execute("./resources/off.png", "./js/unfilter.js");
+            if(toggle) {
+                execute("./resources/on.png", "./js/filter.js");
+            } else {
+                execute("./resources/off.png", "./js/unfilter.js");
+            }
         });
     }
 });
