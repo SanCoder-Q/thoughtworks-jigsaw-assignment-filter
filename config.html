@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <title>Jigsaw filter config</title>
     <link rel="stylesheet" href="./css/config.css">
   </head>
@@ -9,15 +10,16 @@
       <img src="./resources/on.png" alt="Jigsaw filter" title="Jigsaw filter">
     </div>
     <main>
+      <div class="help"><a href="./readme.html">❔</a></div>
       <h2>Jigsaw filter config</h2>
       <div class="content">
         <div class="whitelist">
-          <span>Core:</span>
-          <textarea id="core_whitelist" rows="12"></textarea>
+          <span><b>Core:</b></span>
+          <textarea id="core_whitelist" rows="12" placeholder="<People_ID_1>, <People_ID_2>, ..."></textarea>
         </div>
         <div class="whitelist">
-          <span>Dedicated:</span>
-          <textarea id="dedicated_whitelist" rows="12"></textarea>
+          <span><b>Dedicated:</b></span>
+          <textarea id="dedicated_whitelist" rows="12" placeholder="<People_ID_1>, <People_ID_2>, ..."></textarea>
         </div>
         <button id="save_btn" class="save">Save</button>
         

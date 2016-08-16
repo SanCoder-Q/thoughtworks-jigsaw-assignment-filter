@@ -12,6 +12,16 @@ body {
     left: -50px;
 }
 
+.help {
+    float: right;
+    font-size: 2em;
+    margin: 10px 5px;
+}
+
+.help a {
+    text-decoration: none;
+}
+
 main {
     background-color: #3C454C;
     border: 1px solid #272D33;
