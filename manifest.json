@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Thoughtworks Jigsaw Assignment Filter",
     "description": "A name filter only for Thoughtworks Jigsaw assignment table",
-    "version": "0.0.4",
+    "version": "0.1.4",
     "icons": {
         "16": "resources/on.png",
         "48": "resources/on.png",
