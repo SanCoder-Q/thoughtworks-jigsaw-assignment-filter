@@ -35,7 +35,7 @@ main .whitelist {
     margin: 20px 0;
 }
 
-main .whitelist span {
+main .whitelist > span {
     color: white;
     display: block;
     margin: 10px 0;
