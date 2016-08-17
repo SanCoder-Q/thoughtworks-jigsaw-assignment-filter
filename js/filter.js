@@ -8,7 +8,7 @@ var coreLable =
 
 (function ($) {
     chrome.storage.sync.get(["core", "dedicated"], function(data) {
-        chrome.storage.sync.clear();
+        chrome.storage.sync.remove(["core", "dedicated"]);
         var table = $("table#assignment");
         table.find("tbody tr")
             .map((i, l) => {

@@ -21,7 +21,8 @@ var executeWithDependencies = function(dependencies){
 };
 
 var dependencies = [
-    "./libs/jquery-3.1.0.min.js"
+    "./libs/jquery-3.1.0.min.js",
+    "./js/track.js"
 ];
 
 var execute = executeWithDependencies(dependencies);
