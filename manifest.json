@@ -3,6 +3,11 @@
     "name": "Thoughtworks Jigsaw Assignment Filter",
     "description": "A name filter only for Thoughtworks Jigsaw assignment table",
     "version": "0.1.4",
+    "icons": {
+        "16": "resources/on.png",
+        "48": "resources/on.png",
+        "128": "resources/big.png"
+    },
     "browser_action": {
         "default_icon": {
             "16": "resources/off.png",
