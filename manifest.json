@@ -20,7 +20,10 @@
     },
     "options_page": "config.html",
     "permissions": [
-        "activeTab", "*://jigsaw.thoughtworks.com/*assignment*", "storage"
+        "activeTab",
+        "*://jigsaw.thoughtworks.com/*assignment*",
+        "\u003Call_urls\u003E",
+        "storage"
     ],
-    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 }
