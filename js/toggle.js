@@ -9,7 +9,7 @@ var executeWithDependencies = function(dependencies){
                 .map(jsfile => chrome.tabs.executeScript.bind(null, null, {file: jsfile}))
                 .reduceRight(
                     (acc, f) => f.bind(null, acc),
-                    chrome.tabs.executeScript.bind(null, null, {file: jsfile})
+                    () => chrome.tabs.executeScript(null, {file: jsfile})
                 )();
         } else {
             chrome.tabs.executeScript(null, { file: jsfile});
