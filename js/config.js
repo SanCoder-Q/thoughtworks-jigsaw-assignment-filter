@@ -1,9 +1,10 @@
 function updateTextArea() {
-    var data = localStorage["jigsaw-filter"];
-    if(data && data.length > 0) {
-        $("#core_whitelist").val(JSON.parse(data).core.join(", "));
-        $("#dedicated_whitelist").val(JSON.parse(data).dedicated.join(", "));
-    }
+    chrome.storage.sync.get(["core", "dedicated"], function(data) {
+        if(data.core && data.dedicated) {
+            $("#core_whitelist").val(data.core.join(", "));
+            $("#dedicated_whitelist").val(data.dedicated.join(", "));
+        }
+    });
 }
 
 $(updateTextArea);
@@ -19,7 +20,7 @@ $("#save_btn").click(function() {
         .map(_ => $(_).val())
         .map(_ => _.split(/[\n\r|,]+/).map(_ => _.trim()).filter(_ => _.length > 0));
     if(core_list && dedicated_list) {
-        localStorage["jigsaw-filter"] = JSON.stringify({core: core_list, dedicated: dedicated_list});
+        chrome.storage.sync.set({core: core_list, dedicated: dedicated_list});
         updateTextArea();
         $(".message").css('visibility', 'visible');
     }

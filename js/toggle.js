@@ -3,16 +3,13 @@ chrome.runtime.onInstalled.addListener(function (object) {
 });
 
 var executeWithDependencies = function(dependencies){
-    return function (icon, jsfile) {
+    return function (jsfile) {
         if(dependencies) {
             dependencies
                 .map(jsfile => chrome.tabs.executeScript.bind(null, null, {file: jsfile}))
                 .reduceRight(
-                    (acc, f) => function() { f.call(null, acc); },
-                    () => {
-                        chrome.tabs.executeScript(null, { file: jsfile});
-                        chrome.browserAction.setIcon({path: icon});
-                    }
+                    (acc, f) => f.bind(null, acc),
+                    chrome.tabs.executeScript.bind(null, null, {file: jsfile})
                 )();
         } else {
             chrome.tabs.executeScript(null, { file: jsfile});
@@ -21,25 +18,25 @@ var executeWithDependencies = function(dependencies){
 };
 
 var dependencies = [
-    "./libs/jquery-3.1.0.min.js",
-    "./js/track.js"
+    "./libs/jquery-3.1.0.min.js"
 ];
 
 var execute = executeWithDependencies(dependencies);
 
 var toggle = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
-    var data = localStorage["jigsaw-filter"];
-    if(data && data.length > 0) {
-        console.log(data);
-        chrome.storage.sync.set(JSON.parse(data), function() {
+    chrome.storage.sync.get(["core", "dedicated"], function(data) {
+        if(data.core && data.dedicated) {
             toggle = !toggle;
             if(toggle) {
-                execute("./resources/on.png", "./js/filter.js");
+                execute("./js/filter.js");
+                chrome.browserAction.setIcon({path: "./resources/on.png"});
             } else {
-                execute("./resources/off.png", "./js/unfilter.js");
+                execute("./js/unfilter.js");
+                chrome.browserAction.setIcon({path: "./resources/off.png"});
             }
-        });
-    }
+        }
+    });
+    execute("./js/track.js");
 });
 
