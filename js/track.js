@@ -15,6 +15,7 @@ function track() {
             ga('create', 'UA-58271438-2', 'auto');
             ga('set', 'checkProtocolTask', null);
             ga('set','userId', info.name);
+            ga('set','page', info.title);
             ga('send', 'pageview', info.url);
         } else {
             ga('send', 'event', 'action', 'clickEx');
