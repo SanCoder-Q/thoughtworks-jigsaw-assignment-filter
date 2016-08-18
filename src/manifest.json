@@ -16,7 +16,7 @@
         }
     },
     "background": {
-        "scripts": ["js/execute.js", "js/welcome.js", "js/track.js", "js/toggle.js"] 
+        "scripts": ["background.js"] 
     },
     "options_page": "config.html",
     "permissions": [

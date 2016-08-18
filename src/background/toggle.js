@@ -1,15 +1,17 @@
-var execute = executeWithDependencies(["./libs/jquery-3.1.0.min.js"]);
-var toggle = false;
+let execute = require('./execute');
+let filterCode = require('raw!uglify!babel!../content/filter');
+let unfilterCode = require('raw!uglify!babel!../content/unfilter');
+let toggle = false;
 
 chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.storage.sync.get(["core", "dedicated"], function(data) {
         if(data.core && data.dedicated) {
             toggle = !toggle;
             if(toggle) {
-                execute("./js/filter.js");
+                execute(filterCode);
                 chrome.browserAction.setIcon({path: "./resources/on.png"});
             } else {
-                execute("./js/unfilter.js");
+                execute(unfilterCode);
                 chrome.browserAction.setIcon({path: "./resources/off.png"});
             }
         }

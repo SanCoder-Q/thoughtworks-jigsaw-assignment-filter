@@ -1,10 +1,10 @@
-var execute = executeWithDependencies(["./libs/jquery-3.1.0.min.js"]);
+let execute = require('./execute');
+let collectCode = require('raw!uglify!babel!../content/collect');
 
-function track() {
+let track = () => {
     chrome.storage.local.get(["track"], function(data) {
         var info = data.track;
         if(!info) return;
-        console.log(info.name);
         if(!window.ga) {
             /* jshint ignore:start */
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -21,9 +21,7 @@ function track() {
             ga('send', 'event', 'action', 'clickEx');
         }
     });
-}
+};
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-    execute("./js/collect.js", track);
-});
+chrome.browserAction.onClicked.addListener(tab => execute(collectCode, track));
 

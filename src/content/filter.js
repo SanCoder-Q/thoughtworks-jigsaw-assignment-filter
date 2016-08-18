@@ -1,12 +1,12 @@
-function contains(arr, row) {
-    var href = $(row).find(".name a").attr('href');
+let contains = (arr, row) => {
+    let href = $(row).find(".name a").attr('href');
     return arr && arr.find(_ => href && href.endsWith("/"+_));
-}
-var coreLable =
+};
+let coreLable =
     "<span class='core-symbol' style='display: inline; float: right; font-size: .9em; padding: 0'>Ⓒ</span>";
 
 (function ($) {
-    chrome.storage.sync.get(["core", "dedicated"], function(data) {
+    chrome.storage.sync.get(["core", "dedicated"], data => {
         if(data.core && data.dedicated) {
             var table = $("table#assignment");
             table.find("tbody tr")
@@ -20,4 +20,4 @@ var coreLable =
                 .each((i, l) => $(l).hide());
         }
     });
-})(jQuery);
+})(window.$);

@@ -1,6 +1,6 @@
 var fs = require('fs'),
     archiver = require('archiver'),
-    manifestPath = "./manifest.json",
+    manifestPath = "../dist/manifest.json",
     manifest = require(manifestPath);
 
 var isLocalBuild = process.env.TRAVIS_BRANCH === undefined;
@@ -33,7 +33,6 @@ function pack() {
         throw err;
     });
     archive.pipe(output);
-    archive.glob('!(build|node_modules)*');
-    archive.glob('!(build|node_modules)/**/*');
+    archive.glob('dist/**/*');
     archive.finalize();
 }
