@@ -1,36 +1,36 @@
 {
-    "name": "thoughtworks-jigsaw-assignment-filter",
-    "author": "Jianming Qu",
-    "email": "sancoder.q@gmail.com",
-    "private": true,
-    "dependencies": {
-        "jquery": "latest"
-    },
-    "devDependencies": {
-        "babel-core": "^6.13.2",
-        "babel-loader": "^6.2.5",
-        "babel-plugin-transform-strict-mode": "^6.11.3",
-        "babel-preset-es2015": "^6.9.0",
-        "raw-loader": "^0.5.1",
-        "uglify-loader": "^1.3.0",
-        "webpack": "^1.13.1",
-        "copy-webpack-plugin": "^3.0.1",
-        "fs": "latest",
-        "jshint": "latest",
-        "archiver": "latest",
-        "chrome-webstore-manager": "latest"
-    },
-    "scripts": {
-        "pack": "webpack",
-        "build": "webpack && node ./ci/build.js",
-        "test": "jshint ./src"
-    },
-    "babel": {
-        "presets": [
-            "es2015"
-        ],
-        "plugins": [
-            "babel-plugin-transform-strict-mode"
-        ]
-    }
+  "name": "thoughtworks-jigsaw-assignment-filter",
+  "author": "Jianming Qu",
+  "email": "sancoder.q@gmail.com",
+  "private": true,
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-strict-mode": "^6.11.3",
+    "babel-preset-es2015": "^6.9.0",
+    "raw-loader": "^0.5.1",
+    "uglify-loader": "^1.3.0",
+    "webpack": "^1.13.1",
+    "copy-webpack-plugin": "^3.0.1",
+    "fs": "latest",
+    "jshint": "latest",
+    "archiver": "latest",
+    "chrome-webstore-manager": "latest"
+  },
+  "scripts": {
+    "pack": "webpack",
+    "build": "webpack && node ./ci/build.js",
+    "test": "jshint ./src"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "babel-plugin-transform-strict-mode"
+    ]
+  }
 }

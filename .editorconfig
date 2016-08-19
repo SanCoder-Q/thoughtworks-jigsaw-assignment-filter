@@ -1,0 +1,12 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+
+[*.{js,html,json,yml}]
+indent_size = 2
+
+[*.css]
+indent_size = 4

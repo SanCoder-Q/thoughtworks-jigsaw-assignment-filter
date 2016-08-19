@@ -1,29 +1,29 @@
 {
-    "manifest_version": 2,
-    "name": "Thoughtworks Jigsaw Assignment Filter",
-    "description": "A name filter only for Thoughtworks Jigsaw assignment table",
-    "version": "0.1.4",
-    "icons": {
-        "16": "resources/on.png",
-        "48": "resources/on.png",
-        "128": "resources/big.png"
-    },
-    "browser_action": {
-        "default_icon": {
-            "16": "resources/off.png",
-            "48": "resources/off.png",
-            "128": "resources/off.png"
-        }
-    },
-    "background": {
-        "scripts": ["background.js"] 
-    },
-    "options_page": "config.html",
-    "permissions": [
-        "activeTab",
-        "*://jigsaw.thoughtworks.com/*assignment*",
-        "storage"
-    ],
-    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
-    "homepage_url": "https://github.com/SanCoder-Q/thoughtworks-jigsaw-assignment-filter"
+  "manifest_version": 2,
+  "name": "Thoughtworks Jigsaw Assignment Filter",
+  "description": "A name filter only for Thoughtworks Jigsaw assignment table",
+  "version": "0.1.4",
+  "icons": {
+    "16": "resources/on.png",
+    "48": "resources/on.png",
+    "128": "resources/big.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "resources/off.png",
+      "48": "resources/off.png",
+      "128": "resources/off.png"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"] 
+  },
+  "options_page": "config.html",
+  "permissions": [
+    "activeTab",
+    "*://jigsaw.thoughtworks.com/*assignment*",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "homepage_url": "https://github.com/SanCoder-Q/thoughtworks-jigsaw-assignment-filter"
 }
